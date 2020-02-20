@@ -19,7 +19,7 @@ Copyright (C) 2017 LinuxHelps project.
 Feedback/comment/suggestions : https://linuxhelps.net/
 Author Ivan Bachvarov a.k.a SlaSerX
 
-[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ivan@itbox.bg&item_name=LinuxHelps%20Support&currency_code=EUR) - You can make one-time donations via PayPal. I'll probably buy a coffe. :coffee:
+[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=root@null.bg&item_name=LinuxHelps%20Support&currency_code=EUR) - You can make one-time donations via PayPal. I'll probably buy a coffe. :coffee:
 Thanks! :heart:
 
 ##### Runs on
@@ -105,7 +105,7 @@ Stalker auto install script v1.2 - RELEASE
 
 
 
-[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ivan@itbox.bg&item_name=LinuxHelps%20Support&currency_code=EUR) - You can make one-time donations via PayPal. I'll probably buy a coffe. :coffee:
+[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=root@null.bg&item_name=LinuxHelps%20Support&currency_code=EUR) - You can make one-time donations via PayPal. I'll probably buy a coffe. :coffee:
 Thanks! :heart:
 
 Please Help me with Tweet [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Ministra%20WM%20Portal%20road%20warrior%20installer%20for%20Debian,%20Ubuntu&url=https://github.com/SlaSerX/stalker&via=Stalker&hashtags=iptv,linux,ubuntu,debian,infomir,stalker,ministra,kodi,libreelec,openelec) Thanks! :heart:
