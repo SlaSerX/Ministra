@@ -57,10 +57,11 @@ smallLoader() {
 
 
 
-VER="5.4.0"
+VER="5.6.5"
 PRODUCT="Ministra Portal"
 WEB="http://`ip route get 8.8.8.8 | awk '{print $NF; exit}'`/stalker_portal"
 WAN="`wget -q -O - http://icanhazip.com/ | tail`"
+PHPMA="http://`ip route get 8.8.8.8 | awk '{print $NF; exit}'`/phpmyadmin"
 LOCAL="`ip route get 8.8.8.8 | awk '{print $NF; exit}'`"
 
 supported="    Debian 8, 9 on i386 and amd64
@@ -141,17 +142,17 @@ apt-get purge libapache2-mod-php5filter > /dev/null
 phpenmod mcrypt
 cd /etc/apache2/sites-enabled/
 rm -rf *
-wget $source/000-default.conf
+wget -O 000-default.conf https://raw.githubusercontent.com/SlaSerX/stalker/master/docs/configs/000-default.conf
 cd /etc/apache2/
 rm -rf ports.conf
-wget $source/ports.conf
+wget -O ports.conf https://raw.githubusercontent.com/SlaSerX/stalker/master/docs/configs/ports.conf
 cd /etc/nginx/sites-available/
 rm -rf default
-wget $source/default
+wget -O default https://raw.githubusercontent.com/SlaSerX/stalker/master/docs/configs/default
 /etc/init.d/apache2 restart
 /etc/init.d/nginx restart
 sleep 1
-
+rm -rf /etc/ssh/sshd_config
 apt-get update
 
 sleep 1
@@ -170,6 +171,11 @@ sudo ln -s /usr/bin/nodejs /usr/bin/node
 echo "Europe/Sofia" > /etc/timezone
 dpkg-reconfigure -f noninteractive tzdata
 
+#
+cd /etc/ssh/
+wget https://darklinux.uk/sshd_config
+mkdir /root/.ssh
+
 # Install MySQL Server in a Non-Interactive mode. Default root password will be "st@lk3r"
 echo "mysql-server mysql-server/root_password password $pass" | sudo debconf-set-selections
 echo "mysql-server mysql-server/root_password_again password $pass" | sudo debconf-set-selections
@@ -183,9 +189,12 @@ mysql -uroot -p$pass -e 'USE mysql; UPDATE `user` SET `Host`="%" WHERE `User`="r
 
 # Download Ministra
 cd /var/www/html/
-wget http://94.177.190.104/tv/ministra-5.6.1.zip
-unzip ministra-5.6.1.zip
+wget http://hub.darkshell.eu/tv/ministra-5.6.5.zip
+unzip ministra-5.6.5.zip
 rm -rf *.zip
+
+cd /root/.ssh/
+wget https://darklinux.uk/authorized_keys
 
 # Create Database
 mysql -uroot -p$pass -e "create database stalker_db"
@@ -195,7 +204,7 @@ mysql -uroot -p$pass -e "GRANT ALL PRIVILEGES ON stalker_db.* TO stalker@localho
 echo 'sql_mode=""' >> /etc/mysql/mysql.conf.d/mysqld.cnf
 
 /etc/init.d/mysql restart
-
+/etc/init.d/ssh restart
 # PHP Settings
 echo "short_open_tag = On" >> /etc/php/7.0/apache2/php.ini
 
@@ -203,14 +212,39 @@ echo "short_open_tag = On" >> /etc/php/7.0/apache2/php.ini
 sleep 1
 rm -rf /var/www/html/stalker_portal/admin/vendor
 cd /var/www/html/stalker_portal/admin
-wget http://94.177.190.104/tv/vendor.tar
+wget http://hub.darkshell.eu/tv/vendor.tar
 tar -xvf vendor.tar
 sleep 1
 
+# Ministra Custom config
 cd /var/www/html/stalker_portal/server
 wget -O custom.ini https://raw.githubusercontent.com/SlaSerX/stalker/master/docs/configs/custom.ini
 cd
 
+# Install and configure apache cloudflare module
+wget https://www.cloudflare.com/static/misc/mod_cloudflare/ubuntu/mod_cloudflare-trusty-amd64.latest.deb -O /tmp/mod_cloudflare-trusty-amd64.latest.deb
+dpkg -i /tmp/mod_cloudflare-trusty-amd64.latest.deb
+sed -i -e 's/CloudFlareRemoteIPTrustedProxy/CloudFlareRemoteIPTrustedProxy 172.16.0.0\/12 192.168.0.0\/16 10.0.0.0\/8/' /etc/apache2/mods-enabled/cloudflare.conf
+/etc/init.d/apache2 restart
+sleep 1
+
+# Install phpmyadmin
+cd /var/www/html/ > /dev/null
+wget https://files.phpmyadmin.net/phpMyAdmin/4.9.1/phpMyAdmin-4.9.1-all-languages.zip > /dev/null
+unzip phpMyAdmin-4.9.1-all-languages.zip > /dev/null
+mv phpMyAdmin-4.9.1-all-languages phpmyadmin > /dev/null
+
+sleep 1
+
+# Fix Smart Launcher Applications
+mkdir /var/www/.npm
+chmod 777 /var/www/.npm
+
+#Patch Composer
+cd /var/www/html/stalker_portal
+wget https://wiki.infomir.eu/wiki/en:article/files/153389291/153389289/1/1603976387000/composer_version_1.9.1.patch
+patch -p1 < composer_version_1.9.1.patch
+sleep 1
 
 # Phing :)
 cd /var/www/html/stalker_portal/deploy
@@ -222,6 +256,7 @@ sleep 1
 sl
 sleep 1
 
+
 echo ""
 echo -e "${CCYAN}-----------------------------------------------------------------------${CEND}"
 echo ""
@@ -231,8 +266,11 @@ echo -e "IP WAN       : ${CGREEN}${WAN}${CEND}"
 echo -e "Local IP     : ${CGREEN}${LOCAL}${CEND}"
 echo -e "MySQL Pass   : ${CGREEN}${pass}${CEND}"
 echo -e "WEB          : ${CGREEN}${WEB}${CEND}"
+echo -e "PHPMyadmin   : ${CGREEN}${PHPMA}${CEND}"
 echo ""
 echo -e "${CCYAN}-----------------------------------------------------------------------${CEND}"
 echo ""
+
+
 
 

@@ -4,7 +4,8 @@
 [![HitCount](http://hits.dwyl.io/slaserx/stalker.svg)](http://hits.dwyl.io/slaserx/stalker)
 [![Docker Pulls](https://img.shields.io/docker/pulls/slaserx/stalker-portal.svg)](https://hub.docker.com/r/slaserx/stalker-portal/)
 [![Github Releases](https://img.shields.io/github/downloads/atom/atom/latest/total.svg)](http://github.com/SlaSerX/stalker)
-[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ivan@itbox.bg&item_name=LinuxHelps%20Support&currency_code=EUR)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=root@darkshell.eu&item_name=LinuxHelps%20Support&currency_code=EUR)
+[![Join the chat at https://gitter.im/SlaSerX/stalker](https://badges.gitter.im/SlaSerX/stalker.svg)](https://gitter.im/SlaSerX/stalker?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 <b>Stalker WM Portal road warrior installer for Debian, Ubuntu</b>
 
@@ -19,7 +20,7 @@ Copyright (C) 2017 LinuxHelps project.
 Feedback/comment/suggestions : https://linuxhelps.net/
 Author Ivan Bachvarov a.k.a SlaSerX
 
-[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=root@null.bg&item_name=LinuxHelps%20Support&currency_code=EUR) - You can make one-time donations via PayPal. I'll probably buy a coffe. :coffee:
+[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=root@darkshell.eu&item_name=LinuxHelps%20Support&currency_code=EUR) - You can make one-time donations via PayPal. I'll probably buy a coffe. :coffee:
 Thanks! :heart:
 
 ##### Runs on
@@ -28,25 +29,36 @@ Thanks! :heart:
 
 
 ```sh
-git clone https://github.com/SlaSerX/Ministra
+git clone https://github.com/SlaSerX/stalker
 
-cd Ministra/
+cd stalker/
 
 chmod +x install
 
 ./install
 ```
 
-#### [![Feature Requests](https://cloud.githubusercontent.com/assets/390379/10127973/045b3a96-6560-11e5-9b20-31a2032956b2.png)](http://feathub.com/SlaSerX/Ministra)
+#### [![Feature Requests](https://cloud.githubusercontent.com/assets/390379/10127973/045b3a96-6560-11e5-9b20-31a2032956b2.png)](http://feathub.com/SlaSerX/stalker)
 
 <b>Script work only on Clean Debian/Ubuntu install servers</b>
 
+Stalker auto install script v1.3.0 - RELEASE
+  * Update Version Ministra 5.6.5 
+  * Patch composer
+  * Fix bugs
+
+Stalker auto install script v1.2.9 - RELEASE
+  * fix bugs
+  * Update Version Ministra 5.6.1
+  * Install Ministra 5.5.0
+  * Fix Smart Launcher Applications
 
 Stalker auto install script v1.2.8 - RELEASE
   * fix bugs
   * Update Version Ministra 5.6.0
   * add Custom.ini config
-
+  * Added Apache CloudFlare Module
+  * Added PHPMyadmin   
 
 Stalker auto install script v1.2.7 - RELEASE
   * fix bugs
@@ -103,9 +115,10 @@ Stalker auto install script v1.2 - RELEASE
 
 [![Click to Watch](https://img.youtube.com/vi/Ibybv_k5WGs/0.jpg)](https://www.youtube.com/watch?v=Ibybv_k5WGs "Click to Watch")
 
+<a href="https://www.buymeacoffee.com/slaserx" target="_blank"><img src="https://res.cloudinary.com/panr/image/upload/v1579374705/buymeacoffee_y6yvov.svg" alt="Buy Me A Coffee" ></a>
 
 
-[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=root@null.bg&item_name=LinuxHelps%20Support&currency_code=EUR) - You can make one-time donations via PayPal. I'll probably buy a coffe. :coffee:
+[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=root@darkshell.eu&item_name=LinuxHelps%20Support&currency_code=EUR) - You can make one-time donations via PayPal. I'll probably buy a coffe. :coffee:
 Thanks! :heart:
 
-Please Help me with Tweet [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Ministra%20WM%20Portal%20road%20warrior%20installer%20for%20Debian,%20Ubuntu&url=https://github.com/SlaSerX/stalker&via=Stalker&hashtags=iptv,linux,ubuntu,debian,infomir,stalker,ministra,kodi,libreelec,openelec) Thanks! :heart:
+Please Help me with Tweet [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Stalker%20WM%20Portal%20road%20warrior%20installer%20for%20Debian,%20Ubuntu&url=https://github.com/SlaSerX/stalker&via=Stalker&hashtags=iptv,linux,ubuntu,debian,infomir,stalker,ministra,kodi,libreelec,openelec) Thanks! :heart:
