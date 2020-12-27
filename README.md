@@ -29,9 +29,9 @@ Thanks! :heart:
 
 
 ```sh
-git clone https://github.com/SlaSerX/stalker
+git clone https://github.com/SlaSerX/Ministra
 
-cd stalker/
+cd Ministra/
 
 chmod +x install
 
