@@ -33,19 +33,19 @@ Thanks! :heart:
 [![Ubuntu](https://raw.githubusercontent.com/slaserx/icons/master/64x64/ubuntu.png)](https://www.ubuntu.com)
 
 
-```sh
-git clone https://github.com/SlaSerX/Ministra
-
-cd Ministra/
-
-chmod +x install
-
-./install
-```
 
 #### [![Feature Requests](https://cloud.githubusercontent.com/assets/390379/10127973/045b3a96-6560-11e5-9b20-31a2032956b2.png)](http://feathub.com/SlaSerX/stalker)
 
 <b>Script work only on Clean Debian/Ubuntu install servers</b>
+
+Stalker auto install script v1.3.4 - RELEASE
+
+* Update version Ministra 5.6.6
+* Added new mag devices support
+* Fix bugs from Ubuntu 20.04
+* Added support STB of models MAG500A, MAG520, MAG524
+* Fixed disable channel filter by config option
+
 
 Stalker auto install script v1.3.3 - RELEASE
   * Added new mag devices support
