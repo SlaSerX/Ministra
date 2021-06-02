@@ -39,6 +39,33 @@ Thanks! :heart:
 
 <b>Script work only on Clean Debian/Ubuntu install servers</b>
 
+Stalker auto install script v1.3.7 - RELEASE
+
+* Implemented support for Ubuntu 18.04
+* Implemented support for Ubuntu 20.04
+* Fix GeoIP DB
+* fix problem with phing
+* Patch composer
+* Fix bugs
+* Update links
+* High Ram usage Fix
+
+Stalker auto install script v1.3.6 - RELEASE
+
+* Added support SFVIP player
+* Fix Problem GeoIP DB ( Thanks to Michael Kaprielian )
+* Fix bugs from Ubuntu 20
+* add fail2ban Protection
+* High Ram usage Fix
+
+Stalker auto install script v1.3.5 - RELEASE
+
+* Protect Channel from unautorized access
+* Fix bugs from Ubuntu 20 (Beta)
+* Update GeoIP DB
+* add fail2ban Protection (Ubuntu 16)
+* High Ram usage Fix
+
 Stalker auto install script v1.3.4 - RELEASE
 
 * Update version Ministra 5.6.6
