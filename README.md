@@ -40,7 +40,7 @@ Thanks! :heart:
 <b>Script work only on Clean Debian/Ubuntu install servers</b>
 
 
-<b>Stalker auto install script v1.3.8 - RELEASE</b>
+Stalker auto install script v1.3.8 - RELEASE
   * Update to last version of Ministra 5.6.7
   * Implemented support for Ubuntu 18.04
   * Implemented support for Ubuntu 20.04
